@@ -58,7 +58,6 @@ import { EmergencyAccessComponent } from "./settings/emergency-access.component"
 import { OrganizationsComponent } from "./settings/organizations.component";
 import { PreferencesComponent } from "./settings/preferences.component";
 import { PremiumComponent } from "./settings/premium.component";
-import { SecurityComponent } from "./settings/security.component";
 import { SettingsComponent } from "./settings/settings.component";
 import { SponsoredFamiliesComponent } from "./settings/sponsored-families.component";
 import { UserBillingComponent } from "./settings/user-billing.component";

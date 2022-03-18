@@ -1,3 +1,4 @@
+import { CdkAccordionModule } from "@angular/cdk/accordion";
 import { DragDropModule } from "@angular/cdk/drag-drop";
 import { DatePipe, registerLocaleData, CommonModule } from "@angular/common";
 import localeAf from "@angular/common/locales/af";
@@ -232,6 +233,7 @@ import { BulkRestoreComponent } from "./vault/bulk-restore.component";
 import { BulkShareComponent } from "./vault/bulk-share.component";
 import { CiphersComponent } from "./vault/ciphers.component";
 import { CollectionsComponent } from "./vault/collections.component";
+import { AccordComponent } from "./vault/filters/accord.component";
 import { FolderAddEditComponent } from "./vault/folder-add-edit.component";
 import { GroupingsComponent } from "./vault/groupings.component";
 import { ShareComponent } from "./vault/share.component";
@@ -300,6 +302,7 @@ registerLocaleData(localeZhTw, "zh-TW");
     BadgeModule,
     ButtonModule,
     CalloutModule,
+    CdkAccordionModule,
   ],
   declarations: [
     A11yInvalidDirective,
@@ -481,6 +484,7 @@ registerLocaleData(localeZhTw, "zh-TW");
     VerifyMasterPasswordComponent,
     VerifyRecoverDeleteComponent,
     WeakPasswordsReportComponent,
+    AccordComponent,
   ],
   exports: [
     A11yTitleDirective,

@@ -3,7 +3,7 @@ import { Component, Input } from "@angular/core";
 @Component({
   selector: "app-vault-filter-accord",
   template: `
-    <cdk-accordion class="tw-mb-4 tw-block">
+    <cdk-accordion>
       <cdk-accordion-item #accordionItem="cdkAccordionItem" [expanded]="true">
         <h3>
           <button class="tw-bg-transparent tw-border-none tw-p-0" (click)="accordionItem.toggle()">

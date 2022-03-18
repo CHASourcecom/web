@@ -39,35 +39,41 @@
         </a>
       </li>
     </ul>
-    <h3>{{ "types" | i18n }}</h3>
-    <ul class="bwi-ul card-ul">
-      <li [ngClass]="{ active: selectedType === cipherType.Login }">
-        <a href="#" appStopClick (click)="selectType(cipherType.Login)">
-          <i class="bwi bwi-li bwi-fw bwi-globe"></i>{{ "typeLogin" | i18n }}
-        </a>
-      </li>
-      <li [ngClass]="{ active: selectedType === cipherType.Card }">
-        <a href="#" appStopClick (click)="selectType(cipherType.Card)">
-          <i class="bwi bwi-li bwi-fw bwi-credit-card"></i>{{ "typeCard" | i18n }}
-        </a>
-      </li>
-      <li [ngClass]="{ active: selectedType === cipherType.Identity }">
-        <a href="#" appStopClick (click)="selectType(cipherType.Identity)">
-          <i class="bwi bwi-li bwi-fw bwi-id-card"></i>{{ "typeIdentity" | i18n }}
-        </a>
-      </li>
-      <li [ngClass]="{ active: selectedType === cipherType.SecureNote }">
-        <a href="#" appStopClick (click)="selectType(cipherType.SecureNote)">
-          <i class="bwi bwi-li bwi-fw bwi-sticky-note"></i>{{ "typeSecureNote" | i18n }}
-        </a>
-      </li>
-    </ul>
+    <app-vault-filter-accord class="tw-mb-4 tw-block">
+      <ng-container header>
+        {{ "types" | i18n }}
+      </ng-container>
+      <ng-container body>
+        <ul class="bwi-ul card-ul">
+          <li [ngClass]="{ active: selectedType === cipherType.Login }">
+            <a href="#" appStopClick (click)="selectType(cipherType.Login)">
+              <i class="bwi bwi-li bwi-fw bwi-globe"></i>{{ "typeLogin" | i18n }}
+            </a>
+          </li>
+          <li [ngClass]="{ active: selectedType === cipherType.Card }">
+            <a href="#" appStopClick (click)="selectType(cipherType.Card)">
+              <i class="bwi bwi-li bwi-fw bwi-credit-card"></i>{{ "typeCard" | i18n }}
+            </a>
+          </li>
+          <li [ngClass]="{ active: selectedType === cipherType.Identity }">
+            <a href="#" appStopClick (click)="selectType(cipherType.Identity)">
+              <i class="bwi bwi-li bwi-fw bwi-id-card"></i>{{ "typeIdentity" | i18n }}
+            </a>
+          </li>
+          <li [ngClass]="{ active: selectedType === cipherType.SecureNote }">
+            <a href="#" appStopClick (click)="selectType(cipherType.SecureNote)">
+              <i class="bwi bwi-li bwi-fw bwi-sticky-note"></i>{{ "typeSecureNote" | i18n }}
+            </a>
+          </li>
+        </ul>
+      </ng-container>
+    </app-vault-filter-accord>
     <p *ngIf="!loaded" class="text-muted">
       <i class="bwi bwi-spinner bwi-spin" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>
       <span class="sr-only">{{ "loading" | i18n }}</span>
     </p>
     <ng-container *ngIf="loaded">
-      <app-vault-filter-accord *ngIf="showFolders">
+      <app-vault-filter-accord *ngIf="showFolders" class="tw-mb-4 tw-block">
         <ng-container header>
           {{ "folders" | i18n }}
           <a

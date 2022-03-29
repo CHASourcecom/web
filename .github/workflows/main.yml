@@ -1,0 +1,29 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Checkpoint Code Scan Assesment
+
+# Controls when the workflow will run
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  Code_Scanner:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: scan
+        continue-on-error: true
+        run: |
+          docker pull checkpoint/shiftleft
+          docker run -v=$(pwd):/tmp/ -e "SHIFTLEFT_REGION=${{ secrets.SHIFTLEFT_REGION }}" -e "CHKP_CLOUDGUARD_ID=${{ secrets.CHKP_CLOUDGUARD_ID }}" -e "CHKP_CLOUDGUARD_SECRET=${{ secrets.CHKP_CLOUDGUARD_SECRET }}" checkpoint/shiftleft shiftleft code-scan -r 2003 -e {64876804-4418-4036-b0c0-a363dfdca1dc} -s /tmp/
+          
+
+       
+  

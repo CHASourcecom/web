@@ -22,7 +22,7 @@ jobs:
         continue-on-error: true
         run: |
           docker pull checkpoint/shiftleft
-          docker run -v=$(pwd):/tmp/ -e "SHIFTLEFT_REGION=${{ secrets.SHIFTLEFT_REGION }}" -e "CHKP_CLOUDGUARD_ID=${{ secrets.CHKP_CLOUDGUARD_ID }}" -e "CHKP_CLOUDGUARD_SECRET=${{ secrets.CHKP_CLOUDGUARD_SECRET }}" checkpoint/shiftleft shiftleft code-scan -r 2003 -e {64876804-4418-4036-b0c0-a363dfdca1dc} -s /tmp/
+          docker run -v=$(pwd):/tmp/ -e "SHIFTLEFT_REGION=${{ secrets.SHIFTLEFT_REGION }}" -e "CHKP_CLOUDGUARD_ID=${{ secrets.CHKP_CLOUDGUARD_ID }}" -e "CHKP_CLOUDGUARD_SECRET=${{ secrets.CHKP_CLOUDGUARD_SECRET }}" checkpoint/shiftleft shiftleft code-scan -r 2003 -e ${{secrets.CHKP_ENVIROMENT_ID}} -s /tmp/
           
 
        
